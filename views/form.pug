@@ -1,19 +1,22 @@
 extends layout
 
 block content
-	form(action="/register" method="POST")
-		p
-		label Nombre
-		p
-		input(id="name" type="text" name="name" placeholder="")
-		p
-		label Email
-		p
-		input(id="email" type="text" name="email" placeholder="")
-		p
-		label Password
-		p
-		input(id="password" type="password" name="password" placeholder="")
+	form(action="/register" method="POST").form-in-line.mt-2
+		
+		.form-group
+			label(for=name) Nombre
+		
+			input.form-control.mr-sm-2(id="name" type="text" name="name" placeholder="")
+		
+		.form-group
+			label(for=email) Email
+		
+			input.form-control.mr-sm-2(id="email" type="text" name="email" placeholder="")
+		
+		.form-group
+			label(for=password) Password
+		
+			input.form-control.mr-sm-2(id="password" type="password" name="password" placeholder="")
 		br
 		br
-		button(type="submit") Registrarse
+		button.btn.btn-outline-primary.my-2.my-sm-0(type="submit") Registrarse

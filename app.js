@@ -16,6 +16,14 @@ app.use(cookieSession({
 	secret: "ABCDEFGH",
 	maxAge: 24 * 60 * 60 * 1000
 }));
+
+app.use('/css', express.static(__dirname + '/node_modules/bootstrap/dist/css'));
+app.use('/js', express.static(__dirname + '/node_modules/jquery/dist'));
+app.use('/js', express.static(__dirname + '/node_modules/popper.js/dist'));
+app.use('/js', express.static(__dirname + '/node_modules/bootstrap/dist/js'));
+
 app.use('/', routes);	//Agrego a la ruta / (sin prefijo) lo que tengo en routes.js
+
+
 
 app.listen(3000, console.log('Listening on port 3000!'));

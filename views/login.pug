@@ -3,17 +3,21 @@ extends layout
 block content
 	script. 
 	if(error) 
-		p= error
+		.alert.alert-danger.mt-3
+			= error
 
-	form(action="/login" method="POST")
-		p
-		label Email
-		p
-		input(id="email" type="text" name="email" placeholder="")
-		p
-		label Password
-		p
-		input(id="password" type="password" name="password" placeholder="")
+	form(action="/login" method="POST").form-in-line.mt-2
+		.form-group
+			label(for=email) Email
+		
+			input.form-control.mr-sm-2(id="email" type="text" name="email" placeholder="")
+		
+		.form-group
+			label(for=password) Password
+		
+			input.form-control.mr-sm-2(id="password" type="password" name="password" placeholder="")
 		br
 		br
-		button(type="submit") Login
+		.d-flex.justify-content-between
+			a(href='/register') Registrarse
+			button.btn.btn-outline-primary(type="submit") Ingresar
