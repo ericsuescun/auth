@@ -1,0 +1,19 @@
+extends layout
+
+block content
+	script. 
+	if(error) 
+		p= error
+
+	form(action="/login" method="POST")
+		p
+		label Email
+		p
+		input(id="email" type="text" name="email" placeholder="")
+		p
+		label Password
+		p
+		input(id="password" type="password" name="password" placeholder="")
+		br
+		br
+		button(type="submit") Login

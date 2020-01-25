@@ -5,6 +5,7 @@ var cookieSession = require('cookie-session');
 var bcrypt = require('bcrypt');
 var User = require('./models/user');	//Importo el modelo creado para User
 var routes = require('./routes');	//Importo el enrutador
+var requireUser = require('./requireuser');
 
 app.set('view engine', 'pug');
 app.set('views', './views');
